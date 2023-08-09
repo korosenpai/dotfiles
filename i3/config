@@ -127,14 +127,14 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: terminals"
-set $ws2 "2: browsers"
-set $ws3 "3: utilities"
-set $ws4 "4: fun"
+set $ws2 "2: code"
+set $ws3 "3: browsers"
+set $ws4 "4: utilities"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
-set $ws9 "9"
+set $ws9 "9: fun"
 set $ws10 "10: music"
 
 # switch to workspace
@@ -255,18 +255,21 @@ exec_always --no-startup-id feh --bg-scale $HOME/Pictures/wallpapers/gruvbox/ima
 
 # ASSIGN PROGRAMS TO WORKSPACES
 # to get program class use "xprop" in WM_CLASS(STRING) choose second option
-for_window [class="firefox"] move to workspace $ws2
 
-for_window [class="Gimp-2.10"] move to workspace $ws3
-for_window [class="Blender"] move to workspace $ws3
-for_window [class="obsidian"] move to workspace $ws3
-for_window [class="vue-notes"] move to workspace $ws3
-for_window [class="Nm-connection-editor"] move to workspace $ws3
-for_window [class="Blueman-manager"] move to workspace $ws3
-for_window [class="Aseprite"] move to workspace $ws3
+for_window [class="Code"] move to workspace $ws2
 
-for_window [class="LibreWolf"] move to workspace $ws4
-for_window [class="aniplayer"] move to workspace $ws4
+for_window [class="firefox"] move to workspace $ws3
+
+for_window [class="Gimp-2.10"] move to workspace $ws4
+for_window [class="Blender"] move to workspace $ws4
+for_window [class="obsidian"] move to workspace $ws4
+for_window [class="vue-notes"] move to workspace $ws4
+for_window [class="Nm-connection-editor"] move to workspace $ws4
+for_window [class="Blueman-manager"] move to workspace $ws4
+for_window [class="Aseprite"] move to workspace $ws4
+
+for_window [class="LibreWolf"] move to workspace $ws9
+for_window [class="aniplayer"] move to workspace $ws9
 
 for_window [class="waterfox"] move to workspace $ws10
 
