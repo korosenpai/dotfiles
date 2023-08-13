@@ -265,7 +265,7 @@ for_window [class="Blender"] move to workspace $ws4
 for_window [class="obsidian"] move to workspace $ws4
 for_window [class="vue-notes"] move to workspace $ws4
 for_window [class="Nm-connection-editor"] move to workspace $ws4
-for_window [class="Blueman-manager"] move to workspace $ws4
+#for_window [class="Blueman-manager"] move to workspace $ws4
 for_window [class="Aseprite"] move to workspace $ws4
 
 for_window [class="LibreWolf"] move to workspace $ws9
@@ -310,6 +310,7 @@ bindsym $mod+shift+f exec --no-startup-id gnome-terminal -- sh -c '.local/bin/fr
 
 # Tkinter app float by default
 for_window [class="Tk"] floating enable
+for_window [class="Blueman-manager"] floating enable
 
 # network manager in polybar
 for_window [class="polybar-terminal-network-manager"] floating enable
