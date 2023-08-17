@@ -57,7 +57,7 @@ font-3 = "FontAwesome6Brands:pixelsize=8;1"
 
 modules-left = xworkspaces
 ;modules-center = frey
-modules-right = date wlan bluetooth pulseaudio backlight battery
+modules-right = date updated_wlan bluetooth pulseaudio backlight battery
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -147,12 +147,19 @@ format = <ramp> <label>% <bar>
 [module/bluetooth]
 type = custom/script
 exec = $HOME/.config/polybar/bluetooth/bluetooth.sh
-interval = 2
+interval = 4
 click-right = exec blueman-manager
 click-left = exec $HOME/.config/polybar/bluetooth/bluetooth_toggle.sh
 format-padding = 1
 ;format-background = #000000
 ;format-foreground = #ffffff
+
+[module/updated_wlan]
+type = custom/script
+exec = $HOME/.config/polybar/wlan.sh
+interval = 4
+;format-prefix = "WLAN: "
+format = <label>
 
 [module/xworkspaces]
 type = internal/xworkspaces
