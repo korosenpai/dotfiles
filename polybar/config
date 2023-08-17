@@ -256,7 +256,7 @@ interface-type = wireless
 ;
 label-connected = %{A1:python3 $HOME/coding/python/programs/py_network_manager/wifi_cycle.py:}%{A3:gnome-terminal --class="polybar-terminal-network-manager" -- sh -c "python3 $HOME/coding/python/programs/py_network_manager/main.py":}   %essid% %{A}%{A} 
 
-format-disconnected = %{A1:python3 $HOME/coding/python/programs/network_manager/py_wifi_cycle.py:}%{A3:nm-connection-editor:} 󰖪 offline %{A}%{A}
+format-disconnected = %{A1:python3 $HOME/coding/python/programs/py_network_manager/wifi_cycle.py:}%{A3:nm-connection-editor:} 󰖪 offline %{A}%{A}
 ;format-disconnected-underline = ${self.format-connected-underline}
 
 
