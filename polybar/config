@@ -158,8 +158,10 @@ format-padding = 1
 type = custom/script
 exec = $HOME/.config/polybar/wlan.sh
 interval = 4
-;format-prefix = "WLAN: "
 format = <label>
+
+click-left = python3 $HOME/coding/python/programs/py_network_manager/wifi_cycle.py
+click-right = gnome-terminal --class="polybar-terminal-network-manager" -- sh -c "python3 $HOME/coding/python/programs/py_network_manager/main.py"
 
 [module/xworkspaces]
 type = internal/xworkspaces
