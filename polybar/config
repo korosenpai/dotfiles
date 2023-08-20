@@ -320,13 +320,24 @@ format-full = "  max charge"
 
 label-charging = %percentage%%
 label-discharging = %percentage%%
+
 ; Only applies if <ramp-capacity> is used
-ramp-capacity-0 = " "
-ramp-capacity-0-foreground = #de0037
-ramp-capacity-1 = " "
-ramp-capacity-2 = " "
-ramp-capacity-3 = " "
-ramp-capacity-4 = " "
+
+;ramp-capacity-0-foreground = #de0037
+;ramp-capacity-0 = " "
+;ramp-capacity-1 = " "
+;ramp-capacity-2 = " "
+;ramp-capacity-3 = " "
+;ramp-capacity-4 = " "
+
+ramp-capacity-foreground = ${colors.primary}
+ramp-capacity-0 = "   "
+ramp-capacity-1 = "   "
+ramp-capacity-2 = "   "
+ramp-capacity-3 = "   "
+ramp-capacity-4 = "   "
+
+
 
     ; Only applies if <animation-charging> is used
 ; " " is because there is one extra space for formatting 
