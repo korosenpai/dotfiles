@@ -226,7 +226,7 @@ bindsym $mod+r mode "resize"
 
 # custom shortcut to lock computer
 #bindsym $mod+shift+x exec --no-startup-id i3lock -c 000000
-bindsym $mod+shift+x exec --no-startup-id $HOME/Documents/giochi_e_app/blurred_i3_lock.sh
+bindsym $mod+shift+x exec --no-startup-id $HOME/.config/.utils/blurred_i3_lock.sh
 
 # Sreen brightness controls
 exec_always --no-startup-id light -S 30
@@ -303,7 +303,7 @@ exec --no-startup-id $HOME/.config/glava/launch.sh
 bindsym $mod+mod1+space exec --no-startup-id ulauncher
 
 # mount hardisk
-exec_always --no-startup-id $HOME/Documents/giochi_e_app/mount_hard_drive.sh
+exec_always --no-startup-id $HOME/.config/.utils/mount_hard_drive.sh
 
 # frey
 bindsym $mod+shift+f exec --no-startup-id gnome-terminal -- sh -c '.local/bin/frey'
