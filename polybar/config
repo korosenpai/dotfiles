@@ -318,7 +318,8 @@ format-charging = 󱐋 <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 ;format-full = "󱐮 󱐮 󱐮 󱐮 max charge"
 format-full-foreground = ${colors.primary}
-format-full = "󱐮 󱐮 󱐮 󱐮 full health!"
+;format-full = "󱐮 󱐮 󱐮 󱐮 full health!"
+format-full = "    full health!"
 
 label-charging = %percentage%%
 label-discharging = %percentage%%
