@@ -316,7 +316,9 @@ poll-interval = 20
 
 format-charging = 󱐋 <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
-format-full = "  max charge"
+;format-full = "󱐮 󱐮 󱐮 󱐮 max charge"
+format-full-foreground = ${colors.primary}
+format-full = "󱐮 󱐮 󱐮 󱐮 full health!"
 
 label-charging = %percentage%%
 label-discharging = %percentage%%
@@ -365,10 +367,10 @@ animation-charging-8 = "󱐮 󱐮 󱐮 󱐮"
 animation-charging-framerate = 800
 
 ; Only applies if <animation-low> is used
-; New in version 3.6.0
-animation-low-0 = 
-animation-low-1 = 
-animation-low-framerate = 800
+; New in version 3.6.0 #WARN: we not have:(
+;animation-low-0 = 
+;animation-low-1 = 
+;animation-low-framerate = 800
 
 [settings]
 screenchange-reload = true
