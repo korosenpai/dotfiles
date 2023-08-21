@@ -10,7 +10,7 @@ BLUR="20x10"
 
 scrot $PICTURE
 convert $PICTURE -blur $BLUR $PICTURE 
-i3lock -i $PICTURE
+i3lock -n -i $PICTURE
 
 rm $PICTURE
 
