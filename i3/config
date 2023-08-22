@@ -286,8 +286,10 @@ gaps outer 10
 smart_gaps on
 
 
-# show status of caps lock
-bindsym Caps_Lock exec --no-startup-id $HOME/.config/.utils/caps_lock_status.sh
+# show status of special keys
+# can see keys via xmodmap
+bindsym Caps_Lock exec --no-startup-id $HOME/.config/.utils/special_keys/caps_lock_status.sh
+bindsym Num_Lock exec --no-startup-id $HOME/.config/.utils/special_keys/num_lock_status.sh
 
 # window compositor
 exec_always --no-startup-id picom
