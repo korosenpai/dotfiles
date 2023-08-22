@@ -282,8 +282,10 @@ interval = 1
 date =  %H:%M
 date-alt =  %Y-%m-%d %H:%M:%S
 
-label = %date%
+;label = %date%
+label = "%{A3:gnome-calendar:}%date%%{A}"
 label-foreground = ${colors.primary}
+
 
 [module/battery]
 type = internal/battery
