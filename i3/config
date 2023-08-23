@@ -77,10 +77,13 @@ bindsym $mod+d exec --no-startup-id rofi -show drun
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-# bindsym $mod+j focus left
-# bindsym $mod+k focus down
-# bindsym $mod+l focus up
-# bindsym $mod+ograve focus right
+#bindsym $mod+j focus left
+#bindsym $mod+k focus down
+#bindsym $mod+l focus up
+#bindsym $mod+ograve focus right
+bindsym $mod+j focus left
+bindsym $mod+k focus right
+
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -165,6 +168,8 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 # move workspaces betweeen monitors
 # TODO: https://www.youtube.com/watch?v=V1F7qbp9s-Q 3:38 usee mod shift hjkl
+bindsym $mod+Shift+j move workspace to output right 
+bindsym $mod+Shift+k move workspace to output left
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
