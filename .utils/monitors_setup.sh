@@ -9,6 +9,8 @@ sm="HDMI-A-0"
 #xrandr --output "eDP" --auto --output "HDMI-A-0" --same-as "eDP"
 
 # if found second monitor start this config
+# WARN: doesnt display monitor if connected after login
+# TODO: find reliable method to detect ALL connected monitors
 #xrandr --listmonitors | grep $sm
 
 # awk starts from third line (ignores count of monitors and base monitor) and then prints last word -> monitor name
