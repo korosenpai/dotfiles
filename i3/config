@@ -333,6 +333,7 @@ for_window [class="polybar-terminal-network-manager"] floating enable
 set $fm eDP
 set $sm HDMI-A-0
 
+# TODO: exec from .config/.utils/monitor_setup.sh
 exec_always --no-startup-id xrandr --output $fm --auto --output $sm --auto --left-of $fm
 
 workspace $ws1 output eDP
