@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # TODO: set differeent modes https://www.youtube.com/watch?v=wu2NWw2wPaA&t=220s
+# NOTE: can also try and brute force every configuration? commands with monitors not found will just crash
 
 fm="eDP"
 sm="HDMI-A-0"
