@@ -49,6 +49,7 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 # TODO: https://www.reddit.com/r/i3wm/comments/kiar66/hdmi_audio_problem/
+# TODO: make it work with exteernal keyboard
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
@@ -76,10 +77,10 @@ bindsym $mod+d exec --no-startup-id rofi -show drun
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+ograve focus right
+# bindsym $mod+j focus left
+# bindsym $mod+k focus down
+# bindsym $mod+l focus up
+# bindsym $mod+ograve focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -88,10 +89,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+ograve move right
+#bindsym $mod+Shift+j move left
+#bindsym $mod+Shift+k move down
+#bindsym $mod+Shift+l move up
+#bindsym $mod+Shift+ograve move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -161,6 +162,9 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
+
+# move workspaces betweeen monitors
+# TODO: https://www.youtube.com/watch?v=V1F7qbp9s-Q 3:38 usee mod shift hjkl
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -321,3 +325,7 @@ for_window [class="Blueman-manager"] floating enable
 
 # network manager in polybar
 for_window [class="polybar-terminal-network-manager"] floating enable
+
+
+# set second monitor
+#include $HOME/.config/i3/home_dual_monitor.conf
