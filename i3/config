@@ -167,7 +167,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # move workspaces betweeen monitors
-# TODO: https://www.youtube.com/watch?v=V1F7qbp9s-Q 3:38 usee mod shift hjkl
+# https://www.youtube.com/watch?v=V1F7qbp9s-Q 3:38 usee mod shift hjkl
 bindsym $mod+Shift+j move workspace to output right 
 bindsym $mod+Shift+k move workspace to output left
 
@@ -341,8 +341,8 @@ set $sm HDMI-A-0
 # TODO: exec from .config/.utils/monitor_setup.sh
 exec_always --no-startup-id xrandr --output $fm --auto --output $sm --auto --left-of $fm
 
-workspace $ws1 output eDP
-workspace $ws2 output eDP
+workspace $ws1 output $fm
+workspace $ws2 output $fm
 workspace $ws3 output $sm
 workspace $ws4 output $sm
 workspace $ws5 output $sm
