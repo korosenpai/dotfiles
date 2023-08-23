@@ -330,6 +330,7 @@ for_window [class="Blueman-manager"] floating enable
 
 # network manager in polybar
 for_window [class="polybar-terminal-network-manager"] floating enable
+for_window [class="Gufw.py"] floating enable
 
 
 # set second monitor
