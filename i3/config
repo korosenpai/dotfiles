@@ -329,3 +329,20 @@ for_window [class="polybar-terminal-network-manager"] floating enable
 
 # set second monitor
 #include $HOME/.config/i3/home_dual_monitor.conf
+# obtained with xrandr
+set $fm eDP
+set $sm HDMI-A-0
+
+exec_always --no-startup-id xrandr --output $fm --auto --output $sm --auto --left-of $fm
+
+workspace $ws1 output eDP
+workspace $ws2 output eDP
+workspace $ws3 output $sm
+workspace $ws4 output $sm
+workspace $ws5 output $sm
+workspace $ws6 output $sm
+workspace $ws7 output $sm
+workspace $ws8 output $sm
+workspace $ws9 output $sm
+workspace $ws10 output $sm
+
