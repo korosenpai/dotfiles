@@ -14,20 +14,31 @@ sm="HDMI-A-0"
 # TODO: find reliable method to detect ALL connected monitors
 #xrandr --listmonitors | grep $sm
 
+# get last word from string
+last_word() {
+    echo $1 | awk '{ print $NF }'
+}
+
+n_monitors=$(xrandr --listmonitors | awk 'NR <= 1 { print $NF }')
 # awk starts from third line (ignores count of monitors and base monitor) and then prints last word -> monitor name
 av_monitors=$(xrandr --listmonitors | awk 'NR >= 3 { print $NF }')
 
+#TODO: make glava launch based on monitor
+echo $n_monitors monitors detected...
+case $n_monitors in 
+    "2")
+        case $av_monitors in
+            "$sm")
+                echo $sm found! running home configuration
+                xrandr --output $fm --auto --output $sm --auto --left-of $fm
+                notify-send "connected to $sm"
+                ;;
 
-case $av_monitors in
-    "$sm")
-        echo $sm found! running home configuration
-        xrandr --output $fm --auto --output $sm --auto --left-of $fm
-        notify-send "connected to $sm"
-        ;;
+            *)
+                echo "no useful monitor/s found :("
+                ;;
+        esac
 
-    *)
-        echo "no useful monitor/s found :("
-        ;;
 esac
 
 # set second monitor to the left
