@@ -1,43 +1,45 @@
 #!/bin/sh
 
 # TODO: set differeent modes https://www.youtube.com/watch?v=wu2NWw2wPaA&t=220s
-# NOTE: can also try and brute force every configuration? commands with monitors not found will just crash
 
 fm="eDP"
-sm="HDMI-A-0"
+HOME_sm="HDMI-A-0"
 
 # reset xrandr and make screen equal
 #xrandr --output "eDP" --auto --output "HDMI-A-0" --same-as "eDP"
 
-# if found second monitor start this config
-# WARN: doesnt display monitor if connected after login
-# TODO: find reliable method to detect ALL connected monitors
-#xrandr --listmonitors | grep $sm
 
-# get last word from string
-last_word() {
-    echo $1 | awk '{ print $NF }'
+# get list of connected monitors
+monitors() {
+    xrandr --query | grep '\bconnected\b' | awk '{ print $1 }'
 }
 
-n_monitors=$(xrandr --listmonitors | awk 'NR <= 1 { print $NF }')
-# awk starts from third line (ignores count of monitors and base monitor) and then prints last word -> monitor name
-av_monitors=$(xrandr --listmonitors | awk 'NR >= 3 { print $NF }')
+n_monitors=$( echo $(monitors) | wc -w )
 
 #TODO: make glava launch based on monitor
 echo $n_monitors monitors detected...
 case $n_monitors in 
+    "1")
+        # no monitors connected
+        # if there were before now theery are not considered anymore
+        xrandr --auto
+        ;;
+
     "2")
-        case $av_monitors in
-            "$sm")
+        case $(monitors) in
+            # if found second monitor start this config
+            *$HOME_sm*)
                 echo $sm found! running home configuration
-                xrandr --output $fm --auto --output $sm --auto --left-of $fm
-                notify-send "connected to $sm"
+                xrandr --output $fm --auto --output $HOME_sm --auto --left-of $fm
+                notify-send "connected to $HOME_sm"
                 ;;
 
             *)
                 echo "no useful monitor/s found :("
+                notify-send "no useful monitor/s found :(" 
                 ;;
         esac
+        ;;
 
 esac
 

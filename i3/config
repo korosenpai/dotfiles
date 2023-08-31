@@ -339,8 +339,8 @@ for_window [class="Gufw.py"] floating enable
 set $fm eDP
 set $sm HDMI-A-0
 
-exec_always --no-startup-id xrandr --output $fm --auto --output $sm --auto --left-of $fm
-#exec_always --no-startup-id $HOME/.config/.utils/monitors_setup.sh
+#exec_always --no-startup-id xrandr --output $fm --auto --output $sm --auto --left-of $fm
+exec_always --no-startup-id $HOME/.config/.utils/monitors_setup.sh
 
 workspace $ws1 output $fm
 workspace $ws2 output $fm
