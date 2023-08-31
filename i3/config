@@ -336,6 +336,7 @@ for_window [class="Gufw.py"] floating enable
 # set second monitor
 #include $HOME/.config/i3/home_dual_monitor.conf
 # obtained with xrandr
+# TODO: detect them from environment vars defined and changed by monitors setup
 set $fm eDP
 set $sm HDMI-A-0
 

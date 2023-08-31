@@ -17,7 +17,7 @@ monitors() {
 n_monitors=$( echo $(monitors) | wc -w )
 
 #TODO: make glava launch based on monitor
-echo $n_monitors monitors detected...
+notify-send "monitors: $n_monitors"
 case $n_monitors in 
     "1")
         # no monitors connected
@@ -29,14 +29,12 @@ case $n_monitors in
         case $(monitors) in
             # if found second monitor start this config
             *$HOME_sm*)
-                echo $sm found! running home configuration
                 xrandr --output $fm --auto --output $HOME_sm --auto --left-of $fm
                 notify-send "connected to $HOME_sm"
                 ;;
 
             *)
-                echo "no useful monitor/s found :("
-                notify-send "no useful monitor/s found :(" 
+                notify-send "no configured monitor/s found :(" 
                 ;;
         esac
         ;;
