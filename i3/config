@@ -110,7 +110,7 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+m fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -322,7 +322,7 @@ bindsym $mod+mod1+space exec --no-startup-id ulauncher
 exec_always --no-startup-id $HOME/.config/.utils/mount_hard_drive.sh
 
 # frey
-bindsym $mod+shift+f exec --no-startup-id gnome-terminal -- sh -c '.local/bin/frey'
+bindsym $mod+f exec --no-startup-id gnome-terminal -- sh -c '.local/bin/frey'
 
 # Tkinter app float by default
 for_window [class="Tk"] floating enable
