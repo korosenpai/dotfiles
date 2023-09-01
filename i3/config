@@ -313,7 +313,7 @@ exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agen
 
 # NOTE: to avoid multiple copies -> use exec_always only in testing
 # TODO: fix launch.sh bugging and creating multiple copies
-exec --no-startup-id $HOME/.config/glava/launch.sh
+#exec --no-startup-id $HOME/.config/glava/launch.sh
 
 # for vscode workspaces
 bindsym $mod+mod1+space exec --no-startup-id ulauncher
