@@ -2,19 +2,18 @@
 
 # TODO: set differeent modes https://www.youtube.com/watch?v=wu2NWw2wPaA&t=220s
 
-fm="eDP"
-HOME_sm="HDMI-A-0"
+# NOTE: env vars are saved in etc/profile.d/monitors.sh
+
 
 # reset xrandr and make screen equal
 #xrandr --output "eDP" --auto --output "HDMI-A-0" --same-as "eDP"
 
 
 # get list of connected monitors
-monitors() {
-    xrandr --query | grep '\bconnected\b' | awk '{ print $1 }'
-}
+monitors=$( xrandr --query | grep '\bconnected\b' | awk '{ print $1 }' )
+#main_monitor=$( echo $monitors | awk '{ print $1 }'  )
 
-n_monitors=$( echo $(monitors) | wc -w )
+n_monitors=$( echo $monitors | wc -w )
 
 #TODO: make glava launch based on monitor
 notify-send "monitors: $n_monitors"
@@ -26,11 +25,11 @@ case $n_monitors in
         ;;
 
     "2")
-        case $(monitors) in
+        case $monitors in
             # if found second monitor start this config
-            *$HOME_sm*)
-                xrandr --output $fm --auto --output $HOME_sm --auto --left-of $fm
-                notify-send "connected to $HOME_sm"
+            *$HOME_SM*)
+                xrandr --output $FM --auto --output $HOME_SM --auto --left-of $FM
+                notify-send "connected to $HOME_SM"
                 ;;
 
             *)
