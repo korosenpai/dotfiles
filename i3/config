@@ -267,10 +267,10 @@ exec_always --no-startup-id feh --bg-scale $HOME/.config/wallpaper.png
 # to get program class use "xprop" in WM_CLASS(STRING) choose second option
 
 for_window [class="Code"] move to workspace $ws2
-for_window [class="Thonny"] move to workspace $ws2
 
 for_window [class="firefox"] move to workspace $ws3
 
+for_window [class="Thonny"] move to workspace $ws4
 for_window [class="Gimp-2.10"] move to workspace $ws4
 for_window [class="Blender"] move to workspace $ws4
 for_window [class="obsidian"] move to workspace $ws4
