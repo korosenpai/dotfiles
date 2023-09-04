@@ -49,12 +49,22 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 # TODO: https://www.reddit.com/r/i3wm/comments/kiar66/hdmi_audio_problem/
-# TODO: make it work with exteernal keyboard
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+
+set $raise_volume pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id $raise_volume
+bindsym Shift+F11 exec --no-startup-id $raise_volume 
+
+set $lower_volume pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id $lower_volume
+bindsym Shift+F10 exec --no-startup-id $lower_volume
+
+set $mute_audio pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id $mute_audio
+bindsym Shift+F9 exec --no-startup-id $mute_audio
+
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
