@@ -61,7 +61,7 @@ return require('packer').startup(function(use)
     config = function()
         require("color-picker")
     end,
-})
+    })
 
 end)
 

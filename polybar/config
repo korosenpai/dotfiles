@@ -64,6 +64,7 @@ cursor-scroll = ns-resize
 
 enable-ipc = true
 
+tray_output = none
 ;tray-position = right
 
 ; wm-restack = generic
