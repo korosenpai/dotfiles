@@ -15,13 +15,15 @@ monitors=$( xrandr --query | grep '\bconnected\b' | awk '{ print $1 }' )
 
 n_monitors=$( echo $monitors | wc -w )
 
-#TODO: make glava launch based on monitor
 notify-send "monitors: $n_monitors"
 case $n_monitors in 
     "1")
         # no monitors connected
         # if there were before now theery are not considered anymore
         xrandr --auto
+
+        #TODO: make glava launch based on monitor
+        #$HOME/.config/glava/launch.sh &
         ;;
 
     "2")
