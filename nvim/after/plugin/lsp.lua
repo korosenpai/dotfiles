@@ -38,7 +38,6 @@ lsp.set_preferences({
         info = 'I'
     }
 })
-
 lsp.on_attach(function(client, bufnr)
   local opts = {buffer = bufnr, remap = false}
 
@@ -54,6 +53,12 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
+lsp.set_sign_icons({
+  error = '✘',
+  warn = '',
+  hint = '󰍉',
+  info = '»'
+})
 
 --lsp.setup_servers({'dartls', force = true}) -- dart lsp server
 lsp.setup()
