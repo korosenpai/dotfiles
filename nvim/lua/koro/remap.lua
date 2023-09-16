@@ -52,4 +52,5 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
-
+-- ctrl a to select everything (as other ides)
+vim.keymap.set("n", "<C-a>", "gg<S-v>G");
