@@ -22,7 +22,7 @@ require("sidebar-nvim").setup({
 })
 
 
-vim.keymap.set("n", "<C-s>", function()
+vim.keymap.set("n", "<C-b>", function()
     require("sidebar-nvim").toggle()
 
     -- focus bar if opening
