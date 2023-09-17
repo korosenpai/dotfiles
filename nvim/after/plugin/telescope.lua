@@ -6,3 +6,10 @@ vim.keymap.set('n', '<leader>pf', builtin.git_files, {})       -- git file searc
 --    builtin.grep_string({ search = vim.fn.input("Grep > ")})
 --end) -- project search
 vim.keymap.set("n", "<C-s>", builtin.live_grep, {})
+
+
+-- https://github.com/ahmedkhalf/project.nvim
+require'telescope'.load_extension('project') -- will be used by alpha.nvim
+-- c -> create project
+-- d -> delete project
+-- f ->> find files in a project

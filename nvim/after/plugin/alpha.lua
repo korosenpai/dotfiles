@@ -20,7 +20,7 @@ dashboard.section.header.val = {
 dashboard.section.buttons.val = {
 	dashboard.button("<C-p>", "  Find file", ":Telescope find_files <CR>"),
 	dashboard.button("<C-n>", "  New file", ":ene <BAR> startinsert <CR>"),
-	dashboard.button("p", "  Find project", ":Telescope projects <CR>"),
+	dashboard.button("p", "  Find project", ":Telescope project<CR>"),
 	dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
 	dashboard.button("t", "󱎸  Find text", ":Telescope live_grep <CR>"),
 	dashboard.button("c", "  Configuration", ":e $MYVIMRC <CR>"),
