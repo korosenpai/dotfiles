@@ -10,7 +10,8 @@ require("sidebar-nvim").setup({
     update_interval = 2000,
     sections = {
         "files",
-        --"git"
+        --"git",
+        "todos",
     },
     section_separator = {"", "-----", ""},
     section_title_separator = {""},
@@ -18,9 +19,22 @@ require("sidebar-nvim").setup({
         attach_shell = "/bin/zsh", show_all = true, interval = 5000,
     },
     datetime = { format = "%a %b %d, %H:%M", clocks = { { name = "local" } } },
-    todos = { ignored_paths = { "~" } },
+    todos = {
+        icon = "",
+        ignored_paths = { "~" }
+    },
 })
 
+-- NOTE: HOW TO USE
+--
+-- ///// todos /////
+-- t: collapse or expand tabs
+-- e: go to todo
+--
+-- ///// git /////
+-- e: open file
+-- s: stage files
+-- u: unstage files
 
 vim.keymap.set("n", "<C-b>", function()
     require("sidebar-nvim").toggle()
