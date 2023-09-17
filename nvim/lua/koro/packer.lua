@@ -72,13 +72,25 @@ return require('packer').startup(function(use)
     end,
     })
 
+    --use {
+    --  "startup-nvim/startup.nvim",
+    --  requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+    --  config = function()
+    --    require"startup".setup()
+    --  end
+    --}
+    
+    --https://github.com/goolord/alpha-nvim
     use {
-      "startup-nvim/startup.nvim",
-      requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
-      config = function()
-        require"startup".setup()
-      end
+        'goolord/alpha-nvim',
+        requires = { 'nvim-tree/nvim-web-devicons' },
+        config = function ()
+            require'alpha'.setup(require'alpha.themes.startify'.config)
+        end
     }
+
+
+
 
 end)
 
