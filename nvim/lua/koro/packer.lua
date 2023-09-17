@@ -18,6 +18,15 @@ return require('packer').startup(function(use)
     use( 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'} )
     use('nvim-treesitter/playground') -- run with 'TSPlaygroundToggle'
 
+    --TODO: https://www.youtube.com/watch?v=FuYQ7M73bC0
+    --use({
+    --  "nvim-treesitter/nvim-treesitter-textobjects",
+    --  after = "nvim-treesitter",
+    --  requires = "nvim-treesitter/nvim-treesitter",
+    --})
+
+
+
     use('m4xshen/autoclose.nvim')
 
     use('theprimeagen/harpoon')
