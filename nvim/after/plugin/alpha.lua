@@ -23,8 +23,8 @@ dashboard.section.buttons.val = {
 	dashboard.button("p", "  Find project", ":Telescope project<CR>"),
 	dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
 	dashboard.button("t", "󱎸  Find text", ":Telescope live_grep <CR>"),
-    dashboard.button("<leader>ww", "󱞁  Vimwiki", ":VimwikiIndex <CR> :set autochdir<CR>"), -- autochdir is to set nvim to that dir so you can easyly use stuff like telescope
-	dashboard.button("c", "  Configuration", ":e $MYVIMRC <CR> :set autochdir<CR>"),
+    dashboard.button("<leader>ww", "󱞁  Vimwiki", ":VimwikiIndex <CR> :cd %:h<CR>"), -- cd &:h is to set nvim to that dir so you can easyly use stuff like telescope
+	dashboard.button("c", "  Configuration", ":e $MYVIMRC <CR> :cd %:h<CR>"),
 	dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
 }
 
