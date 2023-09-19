@@ -4,7 +4,7 @@
 
 -- line number
 vim.opt.nu = true
---vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- 4 space indents
 vim.opt.tabstop = 4
