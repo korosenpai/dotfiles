@@ -11,7 +11,7 @@
 #ls -l /media/koro/Hardisk && echo "Command succeeded" || echo "Command failed"
 #echo $?
 
-device="/dev/sdb1"
+device="/dev/sda1"
 sleep_interval=5
 
 tries=10

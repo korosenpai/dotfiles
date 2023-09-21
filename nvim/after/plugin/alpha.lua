@@ -14,6 +14,12 @@ dashboard.section.header.val = {
     [[██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║]],
     [[██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║]],
     [[╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝]],
+    [[]],
+    [[      　　／⌒ヽ  ／⌒ヽ  ／⌒ヽ                     ]],
+    [[      ⊂ヽ(　^ω^)つ^ω^)つ^ω^)つ      ／l、   meow? ]],
+    [[      　 ＼ 　／　　　／　　／    （ﾟ､ ｡ ７       ]],
+    [[      　　( ＿_フ( ＿_フ( ＿_フ     |  ~ヽ        ]],
+    [[      　　(／　　(／　　(／         じしf_,)ノ    ]]
 }
 --TODO: make header red -> #E06C75
 
@@ -31,10 +37,35 @@ dashboard.section.buttons.val = {
 
 dashboard.section.footer.val = "alpha.nvim"
 
-dashboard.section.footer.opts.hl = "Type"
 dashboard.section.header.opts.hl = "Include"
 dashboard.section.buttons.opts.hl = "Keyword"
+dashboard.section.footer.opts.hl = "Type"
 
 dashboard.opts.opts.noautocmd = true
 alpha.setup(dashboard.opts)
+
+
+-- NOTE: concept of art to put
+-- https://2ch-aa.blogspot.com/2018/06/625.html
+-- https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Fq9ywpzk0nke81.jpg
+-- https://www.deviantart.com/davirus/art/Cute-ASCII-kitty-81918251
+
+
+--     ／l、   meow?
+--   （ﾟ､ ｡ ７
+--     |  ~ヽ
+--     じしf_,)ノ
+--
+--    
+--　　／⌒ヽ  ／⌒ヽ  ／⌒ヽ
+--⊂ヽ(　^ω^)つ^ω^)つ^ω^)つ
+--　 ＼ 　／　　　／　　／
+--　　( ＿_フ( ＿_フ( ＿_フ
+--　　(／　　(／　　(／
+
+--　　／⌒ヽ  ／⌒ヽ  ／⌒ヽ  
+--⊂ヽ(　^ω^)つ^ω^)つ^ω^)つ      ／l、   meow?
+--　 ＼ 　／　　　／　　／    （ﾟ､ ｡ ７
+--　　( ＿_フ( ＿_フ( ＿_フ     |  ~ヽ
+--　　(／　　(／　　(／         じしf_,)ノ
 
