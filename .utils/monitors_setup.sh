@@ -2,7 +2,7 @@
 
 # TODO: set differeent modes https://www.youtube.com/watch?v=wu2NWw2wPaA&t=220s
 
-# NOTE: env vars are saved in etc/profile.d/monitors.sh
+# NOTE: env vars are saved in /etc/profile.d/monitors.sh
 
 
 # reset xrandr and make screen equal

@@ -5,7 +5,7 @@ configuration {
     show-icons: true;
     icon-theme: "Oranchelo-Beka";
 
-	display-drun: "  Applications";
+	display-drun: "  Apps";
 	display-window: "  Windows";
 
     sidebar-mode: true;
