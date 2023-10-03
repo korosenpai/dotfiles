@@ -1,23 +1,5 @@
-configuration {
-	modi: "window,drun";
-	font: "Cascadia Code 11";
+// https://github.com/adi1090x/rofi
 
-    show-icons: true;
-    icon-theme: "Oranchelo-Beka";
-
-	display-drun: "  Apps";
-	display-window: "  Windows";
-
-    sidebar-mode: true;
- }
-
- /*
-to navigate through modi -> alt + position starting from left of tab that you want to open 
-
-removed modi:
-    * ssh -> use putty
-    * modi -> opens other app stacked on top (useless and uncomfortable)
- */
-
-// theme
 @import "./gruvbox.rasi"
+
+//@import "./themes/style-2-7.rasi"

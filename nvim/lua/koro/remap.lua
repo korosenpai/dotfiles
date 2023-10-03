@@ -54,3 +54,7 @@ end)
 
 -- ctrl a to select everything (as other ides)
 vim.keymap.set("n", "<C-a>", "gg<S-v>G");
+
+-- open and close markdown preview
+vim.keymap.set("n", "<leader>ma", ":MarkdownPreview <CR>")
+vim.keymap.set("n", "<leader>mas", ":MarkdownPreviewStop <CR>")

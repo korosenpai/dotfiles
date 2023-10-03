@@ -113,6 +113,15 @@ return require('packer').startup(function(use)
         end
     }
 
+    -- https://github.com/iamcco/markdown-preview.nvim
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+        setup = function ()
+            -- TODO: fix browser not opening in firefox
+            vim.g.mkdp_browser = { "/usr/bin/firefox" }
+        end
+    })
 
 end)
 
