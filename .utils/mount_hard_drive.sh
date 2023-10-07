@@ -44,6 +44,7 @@ do
     fi
 
     echo "\033[0;32mMounting successful!\033[0m"
+    notify-send "mounted $device"
     break
 
 done
