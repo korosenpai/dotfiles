@@ -57,6 +57,7 @@ font-3 = "FontAwesome6Brands:pixelsize=8;1"
 
 modules-left = xworkspaces
 ;modules-center = frey
+;modules-center = q2a
 modules-right = date updated_wlan bluetooth pulseaudio backlight battery
 
 cursor-click = pointer
@@ -79,6 +80,18 @@ tray_output = none
 type = custom/text
 content= frey 
 click-left = "gnome-terminal -- sh -c $HOME/.local/bin/frey"
+
+[module/q2a]
+; https://github.com/polybar/polybar/wiki/Module:-script
+type = custom/script
+content = q2a
+click-left = "firefox https://q2a.di.uniroma1.it/questions/programming-ay23-24"
+
+exec-if = "wget -q --spider http://google.com"
+exec = "cd $HOME/uni/crawlers/q2a_questions && python3 main.py"
+tail = true
+interval = 3600
+
 
 [module/backlight]
 type = internal/backlight
