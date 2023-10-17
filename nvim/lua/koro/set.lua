@@ -39,3 +39,6 @@ vim.opt.updatetime = 50
 
 vim.g.mapleader = " "
 
+
+-- TODO: remove trailing white space -> https://www.youtube.com/watch?v=HP06nHeYTII
+--vim.highlight.create("ExtraWhiteSpace", {ctermbg="red", guibg="red"}, false)

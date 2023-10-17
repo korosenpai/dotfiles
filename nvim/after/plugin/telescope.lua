@@ -13,3 +13,12 @@ require'telescope'.load_extension('project') -- will be used by alpha.nvim
 -- c -> create project
 -- d -> delete project
 -- f ->> find files in a project
+
+
+require('telescope').setup{
+  defaults = {
+    file_ignore_patterns = {
+      "node_modules"
+    }
+  }
+}
