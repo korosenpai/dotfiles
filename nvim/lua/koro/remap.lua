@@ -58,3 +58,14 @@ vim.keymap.set("n", "<C-a>", "gg<S-v>G");
 -- open and close markdown preview
 vim.keymap.set("n", "<leader>ma", ":MarkdownPreview <CR>")
 vim.keymap.set("n", "<leader>mas", ":MarkdownPreviewStop <CR>")
+
+-- wrap and unwrap lists
+vim.keymap.set("n", "<leader>w", ":set wrap <CR>")
+vim.keymap.set("n", "<leader>nw", ":set nowrap <CR>")
+
+-- close current buffer
+vim.keymap.set("n", "<C-q>", ":bd!<CR>")
+
+-- run filetypes in other split screen terminal
+vim.keymap.set("n", "<leader>rp", ":sp <CR> :term python3 % <CR>") -- rp: run python
+-- TODO: also for c (compile and run)
