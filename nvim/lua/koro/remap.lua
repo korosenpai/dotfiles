@@ -25,14 +25,14 @@ vim.keymap.set("x", "<leader>p", [["_dP]]) -- paste over string while maintainin
 -- <leader y> enter +y mode -> copy something -> like ap for paragraph and it saves in system clipboard
 -- also like highlight something with v the leader y to copy it
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
+--vim.keymap.set("n", "<leader>Y", [["+Y]]) -- leader y == leader Y
 
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]]) -- delete to void register
 
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
-vim.keymap.set("n", "Q", "<nop>")
+--vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>") -- switch session --TODO
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
@@ -45,12 +45,12 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- replace word you are on on entire file
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true }) -- make file executable
 
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/koro/packer.lua<CR>");
-vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
+--vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/.config/nvim/lua/koro/packer.lua<CR>");
+--vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
-vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
-end)
+--vim.keymap.set("n", "<leader><leader>", function()
+--    vim.cmd("so")
+--end)
 
 -- ctrl a to select everything (as other ides)
 vim.keymap.set("n", "<C-a>", "gg<S-v>G");
@@ -63,9 +63,11 @@ vim.keymap.set("n", "<leader>mas", ":MarkdownPreviewStop <CR>")
 vim.keymap.set("n", "<leader>w", ":set wrap <CR>")
 vim.keymap.set("n", "<leader>nw", ":set nowrap <CR>")
 
--- close current buffer
-vim.keymap.set("n", "<C-q>", ":bd!<CR>")
+-- close current buffer without saving
+--vim.keymap.set("n", "<C-q>", ":bd!<CR>")
+vim.keymap.set("n", "Q", ":bd!<CR>")
 
 -- run filetypes in other split screen terminal
+-- -- https://vi.stackexchange.com/questions/514/how-do-i-change-the-current-splits-width-and-height
 vim.keymap.set("n", "<leader>rp", ":sp <CR> :term python3 % <CR>") -- rp: run python
 -- TODO: also for c (compile and run)
