@@ -1,32 +1,38 @@
+-- https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/autocomplete.md#use-enter-to-confirm-completion
+
 local lsp = require("lsp-zero")
-
-lsp.preset("recommended")
-
-lsp.ensure_installed({
-  'eslint',
-  --'tsserver',
-  'rust_analyzer',
-})
-
--- Fix Undefined global 'vim'
-lsp.nvim_workspace()
-
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
-local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<CR>'] = cmp.mapping.confirm({ select = true }), -- CR -> enter
-  ["<C-Space>"] = cmp.mapping.complete(),
-})
 
 
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
+cmp.setup({
+    window = {
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
+    },
+    sources = {
+        { name = "path" },
+        { name = "nvim_lsp" },
+        { name = "nvim_lua" }
 
-lsp.setup_nvim_cmp({
-  mapping = cmp_mappings
+    },
+    formatting = lsp.cmp_format(),
+    mapping = cmp.mapping.preset.insert({
+        ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+        ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- CR -> enter
+        --["<C-Space>"] = cmp.mapping.complete(),
+        --['<Tab>'] = nil,
+        --['<S-Tab>'] = nil,
+    }),
+
+    preselect = 'item',
+    completion = {
+        completeopt = 'menu,menuone,noinsert'
+    },
+
+
 })
 
 lsp.set_preferences({
@@ -38,6 +44,14 @@ lsp.set_preferences({
         info = 'I'
     }
 })
+
+lsp.set_sign_icons({
+    error = '✘',
+    warn = '',
+    hint = '󰍉',
+    info = '»'
+})
+
 lsp.on_attach(function(client, bufnr)
   local opts = {buffer = bufnr, remap = false}
 
@@ -53,15 +67,19 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
-lsp.set_sign_icons({
-  error = '✘',
-  warn = '',
-  hint = '󰍉',
-  info = '»'
-})
 
---lsp.setup_servers({'dartls', force = true}) -- dart lsp server
-lsp.setup()
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  ensure_installed = {'rust_analyzer'},
+  handlers = {
+    lsp.default_setup,
+    lua_ls = function()
+      local lua_opts = lsp.nvim_lua_ls()
+      require('lspconfig').lua_ls.setup(lua_opts)
+    end,
+
+  }
+})
 
 vim.diagnostic.config({
     virtual_text = true
