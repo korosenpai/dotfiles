@@ -40,5 +40,6 @@ then
     tmux select-pane -L
 fi
 
-tmux attach -t $session_name
+# term is to select the correct colorscheme
+TERM=screen-256color tmux attach -t $session_name
 
