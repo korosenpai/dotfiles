@@ -1,5 +1,10 @@
 -- https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/autocomplete.md#use-enter-to-confirm-completion
 
+-- NOTE: if there are problems with parse_snippet deprecation
+-- /usr/share/nvim/runtime/lua/vim/lsp/util.lua
+-- a note is saved on commented warning
+-- DEFAULT_util.lua is file before modifications
+
 local lsp = require("lsp-zero")
 
 local cmp = require('cmp')
