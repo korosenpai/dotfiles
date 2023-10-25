@@ -1,9 +1,15 @@
 #!/bin/bash
-
 # open folders saved by neovim telescope projects
 
-folders=$(cat "$HOME/.local/share/nvim/telescope-projects.txt" \
-    | awk -F '=' '{print $2 }') # separate by "=" and print only second element
+projects_file="$HOME/.local/share/nvim/telescope-projects.txt"
+
+# check if project saved or disabled
+# active: koro=/home/koro=w0=1=1 -> add in fzf
+# deactive: koro=/home/koro=w0=0=1 -> not include
+# =1= only 1 in middle is the one we want
+folders=$(grep '=1=' $projects_file \
+    | awk -F '=' '{ print $2 }') # cut with "=" and get second field
+
 
 selected=$(echo "$folders" | fzf)
 if [ $? -ne 0 ];
