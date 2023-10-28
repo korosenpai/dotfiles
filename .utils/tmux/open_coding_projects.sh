@@ -37,7 +37,7 @@ if [ $? -eq 0 ];
 then
     echo creating session ...
 
-    # Set up Neovim ready to open files
+    # Set up neovim opened in project directory
     tmux send-keys -t "$session_name:0" 'nvim .' Enter
 
     #tmux rename-window -t "$session_name:0" nvim
