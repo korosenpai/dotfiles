@@ -72,6 +72,8 @@ return require('packer').startup(function(use)
     end,
     })
 
+    use ({"norcalli/nvim-colorizer.lua"})
+
     --use {
     --  "startup-nvim/startup.nvim",
     --  requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
