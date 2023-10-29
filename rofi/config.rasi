@@ -1,5 +1,5 @@
 // https://github.com/adi1090x/rofi
 
-@import "./gruvbox.rasi"
+//@import "./gruvbox.rasi"
 
-//@import "./themes/style-2-7.rasi"
+@import "./themes/style-2-7.rasi"
