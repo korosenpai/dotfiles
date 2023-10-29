@@ -23,7 +23,7 @@ local function toggle_colorizer()
     end
 end
 
-vim.keymap.set("n", "<leader>ct", toggle_colorizer)
+vim.keymap.set("n", "<leader>ct", toggle_colorizer) -- color toggle
 
 --  Attaches to every FileType mode
 colorizer.setup {
