@@ -74,3 +74,7 @@ vim.keymap.set("n", "<leader>rp", ":sp <CR> :term python3 % <CR>") -- rp: run py
 
 -- move to dir of current file
 vim.keymap.set("n", "<leader>cd", ":cd %:h <CR> :echo 'moved in: ' getcwd() <CR>")
+
+-- keep lines selected after indenting
+vim.keymap.set("v", ">", ">gv")
+vim.keymap.set("v", "<", "<gv")
