@@ -66,6 +66,8 @@ vim.keymap.set("n", "<leader>nw", ":set nowrap <CR>")
 -- close current buffer without saving
 --vim.keymap.set("n", "<C-q>", ":bd!<CR>")
 vim.keymap.set("n", "Q", ":bd!<CR>")
+vim.keymap.set("n", "<leader><PageUp>", ":bnext<CR>")
+vim.keymap.set("n", "<leader><PageDown>", ":bprev<CR>")
 
 -- run filetypes in other split screen terminal
 -- -- https://vi.stackexchange.com/questions/514/how-do-i-change-the-current-splits-width-and-height
