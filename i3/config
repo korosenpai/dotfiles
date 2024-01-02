@@ -226,6 +226,9 @@ smart_gaps on
 bindsym Caps_Lock exec --no-startup-id $HOME/.config/.utils/special_keys/caps_lock_status.sh
 bindsym Num_Lock exec --no-startup-id $HOME/.config/.utils/special_keys/num_lock_status.sh
 
+# kill non-responding apps+
+bindsym --release $mod+x exec --no-startup-id xkill
+
 # window compositor
 exec_always --no-startup-id picom
 
