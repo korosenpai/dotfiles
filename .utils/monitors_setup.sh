@@ -32,6 +32,9 @@ case $n_monitors in
             *$HOME_SM*)
                 xrandr --output $FM --auto --output $HOME_SM --auto --left-of $FM
                 notify-send "connected to $HOME_SM"
+                # TODO: move audio to those channel
+                # https://www.phind.com/search?cache=etdl4lyqm290o9k33ndbe8xx
+                pactl set-default-sink alsa_output.pci-0000_05_00.1.hdmi-stereo
                 ;;
 
             *)

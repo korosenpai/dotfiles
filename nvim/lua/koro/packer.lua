@@ -124,6 +124,16 @@ return require('packer').startup(function(use)
         end
     })
 
+    -- https://github.com/mg979/vim-visual-multi
+    -- tut: https://www.youtube.com/watch?v=p4D8-brdrZo
+    use("mg979/vim-visual-multi")
+
+    -- TODO: DEBUGGER
+    -- https://www.youtube.com/watch?v=lEMZnrC-ST4 -- tutorial
+    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} } -- https://github.com/rcarriga/nvim-dap-ui
+    use { "theHamsta/nvim-dap-virtual-text" }
+
+
 end)
 
 -- plugin manager can be run with PackerSync
