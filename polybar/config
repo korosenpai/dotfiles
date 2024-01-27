@@ -58,6 +58,7 @@ font-3 = "FontAwesome6Brands:pixelsize=8;1"
 modules-left = xworkspaces
 ;modules-center = frey
 ;modules-center = q2a
+;modules-right = date wlan bluetooth pulseaudio backlight battery
 modules-right = date updated_wlan bluetooth pulseaudio backlight battery
 
 cursor-click = pointer
