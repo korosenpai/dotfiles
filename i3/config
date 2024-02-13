@@ -252,7 +252,7 @@ exec_always --no-startup-id $HOME/.config/.utils/mount_hard_drive.sh
 bindsym $mod+f exec --no-startup-id gnome-terminal -- sh -c '.local/bin/frey'
 
 # open tmux coding session
-bindsym $mod+p exec --no-startup-id gnome-terminal -- sh -c "$HOME/.config/.utils/tmux/open_coding_projects.sh"
+bindsym $mod+p exec --no-startup-id gnome-terminal -- sh -c "$HOME/.config/.utils/open_coding_projects.sh"
 
 # Tkinter app float by default
 for_window [class="Tk"] floating enable
