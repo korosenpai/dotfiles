@@ -70,14 +70,20 @@ vim.keymap.set("n", "Q", ":bd!<CR>")
 vim.keymap.set("n", "<leader><PageUp>", ":bnext<CR>")
 vim.keymap.set("n", "<leader><PageDown>", ":bprev<CR>")
 
--- run filetypes in other split screen terminal
--- -- https://vi.stackexchange.com/questions/514/how-do-i-change-the-current-splits-width-and-height
-vim.keymap.set("n", "<leader>rp", ":sp <CR> :term python3 % <CR>") -- rp: run python
--- TODO: also for c (compile and run)
-
 -- move to dir of current file
 vim.keymap.set("n", "<leader>cd", ":cd %:h <CR> :echo 'moved in: ' getcwd() <CR>")
 
 -- keep lines selected after indenting
 vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "<", "<gv")
+
+-- run filetypes in other split screen terminal
+-- -- https://vi.stackexchange.com/questions/514/how-do-i-change-the-current-splits-width-and-height
+vim.keymap.set("n", "<leader>rp", ":!python3 % <CR>") -- rp: run python quickly
+--vim.keymap.set("n", "<leader>rpt", ":sp <CR> :term python3 % <CR>") -- rp: run python on terminal with full on split screen window
+
+-- %:t:r -> gets filename, then tail, then removes tail
+vim.keymap.set("n", "<leader>rj", ":!javac -d out/ ./*.java && java -cp ./out/ %:t:r <CR>") -- rp: run java
+
+-- TODO: also for c (compile and run)
+
