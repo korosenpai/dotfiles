@@ -197,7 +197,7 @@ bindsym $mod+r mode "resize"
 
 # custom shortcut to lock computer
 #bindsym $mod+shift+x exec --no-startup-id i3lock -c 000000
-bindsym $mod+shift+x exec --no-startup-id $HOME/.config/.utils/blurred_i3_lock.sh
+bindsym $mod+shift+x exec --no-startup-id $HOME/.config/.scripts/blurred_i3_lock.sh
 
 
 # EXECUTE APPS AT STARTUP
