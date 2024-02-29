@@ -44,3 +44,6 @@ vim.opt.splitbelow = true
 
 -- TODO: remove trailing white space -> https://www.youtube.com/watch?v=HP06nHeYTII
 --vim.highlight.create("ExtraWhiteSpace", {ctermbg="red", guibg="red"}, false)
+
+-- show netrw with cascading folders
+vim.g.netrw_liststyle=3

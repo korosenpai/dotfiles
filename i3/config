@@ -69,7 +69,7 @@ bindsym Shift+F9 exec --no-startup-id $mute_audio
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Sreen brightness controls
-exec_always --no-startup-id light -S 30 # default
+exec_always --no-startup-id light -S 20 # default
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 bindsym shift+XF86MonBrightnessUp exec --no-startup-id light -A 25

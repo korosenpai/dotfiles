@@ -295,7 +295,8 @@ type = internal/date
 interval = 1
 
 date =  %H:%M
-date-alt =  %d-%m-%Y %H:%M:%S
+; date-alt =  %d-%m-%Y %H:%M:%S
+date-alt =  %a, %d %b %Y
 
 ;label = %date%
 label = "%{A3:gnome-calendar:}%date%%{A}"

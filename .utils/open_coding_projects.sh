@@ -21,6 +21,6 @@ fi
 
 cd $selected
 # exec neovim and then exec zsh to keep it open after neovmi exits
-gnome-terminal -- zsh -c "nvim . ; exec zsh"
-gnome-terminal .
-i3-msg focus left # focus neovim
+gnome-terminal -- sh -c "nvim . ; exec zsh"
+# gnome-terminal .
+# i3-msg focus left # focus neovim
