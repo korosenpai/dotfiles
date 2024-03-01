@@ -7,7 +7,7 @@ if rfkill list wlan | grep -q "blocked: yes"; then
 fi
 
 prefix="Auto " # prefix to remove when showing wifi on bar
-ssid=$(nmcli -t -f NAME c show --active | sed -e "s/^prefix//")
+ssid=$(nmcli -t -f NAME c show --active | grep -v "docker0" | sed -e "s/^prefix//")
 
 if [ -n "$ssid" ]; then
     echo "  $ssid" 
