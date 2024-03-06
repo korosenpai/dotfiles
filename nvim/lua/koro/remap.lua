@@ -77,18 +77,30 @@ vim.keymap.set("n", "<leader>cd", ":cd %:h <CR> :echo 'moved in: ' getcwd() <CR>
 vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "<", "<gv")
 
--- TODO: add single remap that runs every filetype
--- run filetypes in other split screen terminal
--- https://vi.stackexchange.com/questions/514/how-do-i-change-the-current-splits-width-and-height
--- vim.keymap.set("n", "<leader>rpt", ":sp <CR> :term python3 % <CR>") -- rp: run python on terminal with full on split screen window
-vim.keymap.set("n", "<leader>rp", ":!python3 % <CR>") -- rp: run python quickly
-
--- %:t:r -> gets filename, then tail, then removes tail
-vim.keymap.set("n", "<leader>rj", ":!javac -d out/ ./*.java && java -cp ./out/ %:t:r <CR>") -- rp: run java
-
--- run c -> if makefile found run make else use gcc to compile
--- vim.keymap.set("n", "<leader>rc", "[ -f 'Makefile' ] && make || gcc -o %:t:r % && ./%:t:r") -- rp: run c --NOTE: why doesnt it run:(
-
--- TODO: add sh
-
 vim.keymap.set({"n", "i"}, "<C-o>", "<Esc>:Telescope buffers <CR>") -- show open buffers
+
+
+-- run any file supported with a single command
+vim.api.nvim_create_user_command("RunFile",function()
+    local filename = vim.fn.expand("%")
+    local ext = filename:match("^.+%.(.+)$") or "" -- if file has no extension assign to "" and not nil
+
+    local ext_table = {
+        [ "py" ] = "!python3 %",
+        [ "java" ] = "!javac -d out/ ./*.java && java -cp ./out/ %:t:r", -- %:t:r -> gets filename, then tail, then removes tail
+        [ "c" ] = "![ -f 'Makefile' ] && make || gcc -o %:t:r % && ./%:t:r",
+        [ "sh" ] = "!./%",
+        [ "" ] = "![ -x % ] && ./% || echo 'file or folder not executable'" -- check if file is an executable and not dir before running
+    }
+    local choice = ext_table[ext]
+
+    if (choice) then
+        vim.api.nvim_command(choice)
+    else
+        print("file extension not recognized")
+    end
+
+
+end,{})
+
+vim.keymap.set("n", "<leader>r", ":RunFile <CR>") -- execute file if possible
