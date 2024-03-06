@@ -46,4 +46,4 @@ vim.opt.splitbelow = true
 --vim.highlight.create("ExtraWhiteSpace", {ctermbg="red", guibg="red"}, false)
 
 -- show netrw with cascading folders
-vim.g.netrw_liststyle=3
+-- vim.g.netrw_liststyle=3
