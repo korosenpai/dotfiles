@@ -1,7 +1,7 @@
 -- vim configurations
 -- https://vonheikemen.github.io/devlog/tools/configuring-neovim-using-lua/
 
- vim.opt.guicursor = "" -- fat cursor
+vim.opt.guicursor = "" -- fat cursor
 
 -- line number
 vim.opt.nu = true
