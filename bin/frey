@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd $HOME/coding/python/bots/virtual_assistants/Frey-virtual_assistant/v2
+python3 frey.py
