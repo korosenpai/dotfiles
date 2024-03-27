@@ -8,7 +8,7 @@ projects_file="$HOME/.local/share/nvim/telescope-projects.txt"
 # deactive: koro=/home/koro=w0=0=1 -> not include
 # =1= only 1 in middle is the one we want
 folders=$(grep '=1=' $projects_file \
-    | awk -F '=' '{ print $2 }') # cut with "=" and get second field
+    | awk -F '=' '{ print $1 " -> "$2 }') # cut with "=" and get second field
 
 
 selected=$(echo "$folders" | fzf)
@@ -19,7 +19,7 @@ then
 fi
 
 
-cd $selected
+cd $(awk -F ' -> ' '{ print $2 }' <<< $selected) # re split to get only path to project
 # exec neovim and then exec zsh to keep it open after neovmi exits
 gnome-terminal -- sh -c "nvim . ; exec zsh"
 # gnome-terminal .

@@ -1,4 +1,4 @@
 #!/bin/bash
-#java run files
+#java run files -> javar "Main.java"
 #TODO: make it work with packages
-[ -f $1  ] && [ ! -z $(grep .java$ <<< $1) ] && javac -d out/ ./*.java && java -cp ./out/ $(basename -- $1 .java) "${@:2}" || echo file not found...
+[ -f $1  ] && [ ! -z $(grep .java$ <<< $1) ] && javac -d out/ ./$1 && java -cp ./out/ $(basename -- $1 .java) "${@:2}" || echo file not found...

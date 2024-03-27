@@ -47,3 +47,7 @@ vim.opt.splitbelow = true
 
 -- show netrw with cascading folders
 -- vim.g.netrw_liststyle=3
+
+-- remove automatically commenting when going to next line
+vim.opt_local.formatoptions:remove({ 'r', 'o' })
+
