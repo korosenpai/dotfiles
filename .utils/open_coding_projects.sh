@@ -11,7 +11,7 @@ folders=$(grep '=1=' $projects_file \
     | awk -F '=' '{ print $1 " -> "$2 }') # cut with "=" and get second field
 
 
-selected=$(echo "$folders" | fzf)
+selected=$(echo "$folders" | fzf -i)
 if [ $? -ne 0 ];
 then
     echo no projects selected
@@ -20,7 +20,6 @@ fi
 
 
 cd $(awk -F ' -> ' '{ print $2 }' <<< $selected) # re split to get only path to project
-# exec neovim and then exec zsh to keep it open after neovmi exits
-gnome-terminal -- sh -c "nvim . ; exec zsh"
-# gnome-terminal .
+# gnome-terminal -- sh -c "nvim . ; exec zsh" # exec neovim and then exec zsh to keep it open after neovmi exits
+gnome-terminal . # open a new terminal in that path
 # i3-msg focus left # focus neovim
