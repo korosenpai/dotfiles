@@ -7,7 +7,7 @@
 #udisksctl mount -b /dev/sda1 | grep asd
 
 
-# check if command succeded or failed
+# check if command succeeded or failed
 #ls -l /media/koro/Hardisk && echo "Command succeeded" || echo "Command failed"
 #echo $?
 

@@ -247,6 +247,7 @@ bindsym $mod+mod1+space exec --no-startup-id ulauncher
 
 # mount hardisk
 exec_always --no-startup-id $HOME/.config/.utils/mount_hard_drive.sh
+# exec_always --no-startup-id $HOME/.config/.utils/mount_all.sh
 
 # frey
 bindsym $mod+f exec --no-startup-id gnome-terminal -- sh -c "$HOME/.config/bin/frey"

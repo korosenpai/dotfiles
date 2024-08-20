@@ -79,11 +79,17 @@ vim.keymap.set("v", "<", "<gv")
 
 vim.keymap.set({"n", "i"}, "<C-o>", "<Esc>:Telescope buffers <CR>") -- show open buffers
 
--- TODO: run java packages
--- echo ${$(grep package TestD.java)%;} | awk {'print $2'}
 
 -- check for gradle config, if found run gradlew and if not run normally java file
+-- OLD: !javac -d out/ ./% && java -cp ./out/ %:t:r, -- %:t:r -> gets filename, then tail, then removes tail
 local javaCommandString = "!if [ -f 'gradlew' ]; then ./gradlew run && ./gradlew build; else javac -d out/ ./% && java -cp ./out/ %:t:r; fi"
+
+-- check for makefile, if found run make and execute file specified by the rule "outfile" (if not present it will give error not found)
+-- else compile file and run singularly
+-- NOTE: OUTFILE RULE MUSTY BE DEFINED IN MAKEFILE AND SHOULD ONLY PRINT FILE TO EXECUTE AFTER COMPILATION
+local cCommandString = "!if [ -f 'Makefile' ]; then make && ./$(make outfile); else gcc -o %:t:r % && ./%:t:r; fi"
+
+local shellCommandString = "![ -x % ] && ./% || echo 'file or folder not executable'" -- check if file is not a dir before running
 
 -- run any file supported with a single command
 vim.api.nvim_create_user_command("RunFile",function()
@@ -95,18 +101,18 @@ vim.api.nvim_create_user_command("RunFile",function()
 
     local ext_table = {
         [ "py" ] = "!cd %:h && python3 %",
-        -- [ "java" ] = "!javac -d out/ ./% && java -cp ./out/ %:t:r", -- %:t:r -> gets filename, then tail, then removes tail
         [ "java" ] = javaCommandString,
-        [ "c" ] = "![ -f 'Makefile' ] && make || gcc -o %:t:r % && ./%:t:r",
-        [ "sh" ] = "!./%",
-        [ "" ] = "![ -x % ] && ./% || echo 'file or folder not executable'" -- check if file is an executable and not dir before running
+        [ "c" ] = cCommandString,
+        [ "h" ] = cCommandString,
+        [ "sh" ] = shellCommandString,
+        [ "" ] = shellCommandString
     }
     local choice = ext_table[ext]
 
     if (choice) then
         vim.api.nvim_command(choice)
     else
-        print("file extension not recognized")
+        print(string.format("file extension not recognized: '%s'", ext))
     end
 
 

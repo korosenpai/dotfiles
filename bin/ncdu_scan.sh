@@ -1,0 +1,1 @@
+sudo ncdu / --exclude /media

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# ask for project name and add current dir in file .local/share/nvim/telescope-projects.txt
+
+# current path -> realpath .
+
+read -p "project name >>> " project_name
+echo $project_name
