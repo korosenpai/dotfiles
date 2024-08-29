@@ -1,0 +1,4 @@
+# find file by name
+
+# case insensitive
+[ ! -z "$1" ] && find . -iname "*$1*" || exit 1

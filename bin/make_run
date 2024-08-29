@@ -1,0 +1,3 @@
+# compile c code and run it
+# make must have rule "outfile" that echoes the path to the executable
+make && ./$(make outfile)
