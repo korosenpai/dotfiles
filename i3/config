@@ -76,7 +76,7 @@ bindsym shift+XF86MonBrightnessUp exec --no-startup-id light -A 25
 bindsym shift+XF86MonBrightnessDown exec --no-startup-id light -U 25
 
 # Touchpad controls
-bindsym XF86TouchpadToggle exec --no-startup-id /some/path/toggletouchpad.sh # toggle touchpad
+# bindsym XF86TouchpadToggle exec --no-startup-id /some/path/toggletouchpad.sh # toggle touchpad
 
 # Media player controls
 bindsym XF86AudioPlay exec --no-startup-id playerctl play
