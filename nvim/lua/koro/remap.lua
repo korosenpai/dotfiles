@@ -88,6 +88,7 @@ local javaCommandString = "!if [ -f 'gradlew' ]; then ./gradlew run && ./gradlew
 -- else compile file and run singularly
 -- NOTE: OUTFILE RULE MUSTY BE DEFINED IN MAKEFILE AND SHOULD ONLY PRINT FILE TO EXECUTE AFTER COMPILATION
 local cCommandString = "!if [ -f 'Makefile' ]; then make && ./$(make outfile); else gcc -o %:t:r % && ./%:t:r; fi"
+local cppCommandString = "!if [ -f 'Makefile' ]; then make && ./$(make outfile); else g++ -o %:t:r % && ./%:t:r; fi"
 
 local shellCommandString = "![ -x % ] && ./% || echo 'file or folder not executable'" -- check if file is not a dir before running
 
@@ -103,6 +104,7 @@ vim.api.nvim_create_user_command("RunFile",function()
         [ "py" ] = "!cd %:h && python3 %",
         [ "java" ] = javaCommandString,
         [ "c" ] = cCommandString,
+        [ "cpp" ] = cppCommandString,
         [ "h" ] = cCommandString,
         [ "sh" ] = shellCommandString,
         [ "" ] = shellCommandString

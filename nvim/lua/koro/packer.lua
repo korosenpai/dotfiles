@@ -134,6 +134,10 @@ return require('packer').startup(function(use)
     use { "theHamsta/nvim-dap-virtual-text" }
 
 
+    -- notebbok
+    use { 'dccsillag/magma-nvim', run = ':UpdateRemotePlugins' }
+
+
 end)
 
 -- plugin manager can be run with PackerSync
