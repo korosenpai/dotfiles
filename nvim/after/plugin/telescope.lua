@@ -16,9 +16,19 @@ require'telescope'.load_extension('project') -- will be used by alpha.nvim
 
 
 require('telescope').setup{
-  defaults = {
-    file_ignore_patterns = {
-      "node_modules"
+    defaults = {
+        file_ignore_patterns = {
+            "node_modules",
+            "objs" -- for c compiled files
+        }
+    },
+    extensions = {
+        ["ui-select"] = {
+            require("telescope.themes").get_dropdown {
+            -- even more opts
+            }
+        }
     }
-  }
 }
+
+require("telescope").load_extension("ui-select")

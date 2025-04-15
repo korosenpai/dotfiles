@@ -1,3 +1,7 @@
+" TODO: https://github.com/nvim-lualine/lualine.nvim
+
+
+
 " https://www.youtube.com/watch?v=-AIdjwIGfqM
 " https://www.chiarulli.me/Neovim/05-vim-airline/
 
@@ -19,7 +23,11 @@ let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 
 " Switch to your current theme
-let g:airline_theme = 'gruvbox'
+" base16_gruvbox_dark_hard
+" base16_gruvbox_dark_medium
+" base16_gruvbox_dark_pale
+" base16_gruvbox_dark_soft
+let g:airline_theme = 'base16_gruvbox_dark_medium'
 " https://superuser.com/questions/1341049/how-to-use-gruvbox-airline-theme
 
 " Always show tabs
