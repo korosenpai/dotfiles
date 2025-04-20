@@ -1,4 +1,4 @@
-" TODO: https://github.com/nvim-lualine/lualine.nvim
+" or also, https://github.com/nvim-lualine/lualine.nvim, not added because didnt feel right
 
 
 
@@ -35,3 +35,13 @@ set showtabline=2
 
 " We don't need to see things like -- INSERT -- anymore
 set noshowmode
+
+function! LspServerName()
+  let l:servers = luaeval('vim.lsp.get_clients({bufnr=vim.api.nvim_get_current_buf()})')
+  if empty(l:servers)
+    return "none"
+  endif
+  return "".join(map(l:servers, 'v:val.name'), ", ")
+endfunction
+let g:airline_section_x = '%#__accent_bold#%{LspServerName()}   %{&filetype}'
+

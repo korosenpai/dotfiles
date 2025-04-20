@@ -9,6 +9,7 @@ function ColorMyPencils(color)
 
 end
 
+-- "ellisonleao/gruvbox.nvim"
 require("gruvbox").setup({
     terminal_colors = true, -- add neovim terminal colors
     undercurl = true,
